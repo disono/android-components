@@ -10,17 +10,5 @@
     <item
         android:id="@+id/action_settings"
         android:title="@string/settings" />
-    <item
-        android:id="@+id/hide_toolbar"
-        android:title="Hide Toolbar" />
-    <item
-        android:id="@+id/show_toolbar"
-        android:title="Show Toolbar" />
-    <item
-        android:id="@+id/change_title_toolbar"
-        android:title="Change Title Toolbar" />
-    <item
-        android:id="@+id/immersive_toolbar"
-        android:title="Immersive Screen Toolbar" />
 
 </menu>
