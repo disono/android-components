@@ -7,9 +7,13 @@ package com.webmons.disono.toolbar;
  * @lincense The MIT License (MIT)
  */
 
+import android.annotation.TargetApi;
+import android.os.Build;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,10 +22,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -35,19 +44,39 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         ActionBar actionBar = getSupportActionBar();
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
         switch (item.getItemId()) {
             case R.id.action_refresh:
                 Toast.makeText(MainActivity.this, "Refresh", Toast.LENGTH_SHORT).show();
+                HomeFragment homeFragment = new HomeFragment();
 
-                getSupportFragmentManager()
+                // add the fragment
+                fragmentManager
                         .beginTransaction()
-                        .add(R.id.activityParentView, new HomeFragment())
+                        .replace(R.id.activityParentView, homeFragment)
+                        .addToBackStack(null) // add to history stack
                         .commit();
+
+                // ensure all transactions is finished
+                fragmentManager.executePendingTransactions();
 
                 break;
             case R.id.action_settings:
                 Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+
+                ContextualToolbar contextualToolbar = new ContextualToolbar();
+
+                // add the fragment
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.activityParentView, contextualToolbar)
+                        .addToBackStack(null) // add to history stack
+                        .commit();
+
+                // ensure all transactions is finished
+                fragmentManager.executePendingTransactions();
+
                 break;
             case R.id.show_toolbar:
                 // show actionbar
@@ -83,12 +112,25 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            // back to history stack
+            fragmentManager.popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
     // using immersive full screen mode
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     private void hideSystemUI() {
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN // hide nav bar
-                | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
-                | View.SYSTEM_UI_FLAG_IMMERSIVE // remove the following flag for version < 19
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE // remove the following flag for version < 19
         );
     }
 }
