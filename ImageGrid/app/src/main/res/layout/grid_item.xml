@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- Author: Archie, Disono (disono.apd@gmail.com / webmonsph@gmail.com)
+- Website: www.webmons.com
+- License: Apache 2.0
+- Created at: 2016-08-01 04:33 PM
+-->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <image_grid.disono.webmons.com.imagegrid.SquareImageView
+        android:id="@+id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+</FrameLayout>
