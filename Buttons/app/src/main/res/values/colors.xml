@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3880ff</color>
+    <color name="colorPrimaryDark">#3171e0</color>
+    <color name="colorAccent">#4c8dff</color>
+    <color name="textColorPrimary">#f4f5f8</color>
+
+    <color name="primary">#3880ff</color>
+    <color name="primaryShade">#3171e0</color>
+    <color name="primaryTint">#4c8dff</color>
+
+    <color name="secondary">#0cd1e8</color>
+    <color name="secondaryShade">#0bb8cc</color>
+    <color name="secondaryTint">#24d6ea</color>
+
+    <color name="tertiary">#7044ff</color>
+    <color name="tertiaryShade">#633ce0</color>
+    <color name="tertiaryTint">#7e57ff</color>
+
+    <color name="success">#10dc60</color>
+    <color name="successShade">#0ec254</color>
+    <color name="successTint">#28e070</color>
+
+    <color name="warning">#ffce00</color>
+    <color name="warningShade">#e0b500</color>
+    <color name="warningTint">#ffd31a</color>
+
+    <color name="danger">#f04141</color>
+    <color name="dangerShade">#d33939</color>
+    <color name="dangerTint">#f25454</color>
+
+    <color name="dark">#222428</color>
+    <color name="darkShade">#1e2023</color>
+    <color name="darkTint">#383a3e</color>
+
+    <color name="medium">#989aa2</color>
+    <color name="mediumShade">#86888f</color>
+    <color name="mediumTint">#a2a4ab</color>
+
+    <color name="light">#f4f5f8</color>
+    <color name="lightShade">#d7d8da</color>
+    <color name="lightTint">#f5f6f9</color>
+</resources>

@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF5722</color>
-    <color name="colorPrimaryDark">#E64A19</color>
-
-    <color name="wbLight">#FFFFFF</color>
-    <color name="wbStable">#F8F8F8</color>
-    <color name="wbPositive">#387EF5</color>
-    <color name="wbCalm">#11C1F3</color>
-    <color name="wbBalanced">#33CD5F</color>
-    <color name="wbEnergized">#FFC900</color>
-    <color name="wbAssertive">#EF473A</color>
-    <color name="wbRoyal">#886AEA</color>
-    <color name="wbDark">#444444</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
 </resources>
